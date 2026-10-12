@@ -3,6 +3,8 @@ import { useState } from "react";
 import "./App.css";
 import { checkHealth } from "./api";
 import api from "./api";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 const prompts = [
   {
     number: "01",
@@ -166,7 +168,11 @@ setAnswer(response.data.answer || "The AI returned an empty answer.");
   <section className="ai-result">
     <p>GROWTH SIGNAL / LOCAL AI · QWEN 2.5</p>
     <h2>Your growth insight</h2>
-    <div className="answer-text">{answer}</div>
+    <div className="markdown-answer">
+  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+    {answer}
+  </ReactMarkdown>
+</div>
     <p className="grounding-note">
       AI-generated response · Transcript retrieval is not yet connected.
     </p>
