@@ -1,0 +1,19 @@
+
+# Dependencies
+client/node_modules/
+client/dist/
+
+# Python environment and cache
+server/.venv/
+server/__pycache__/
+*.pyc
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Editors and OS
+.vscode/
+.DS_Store
+Thumbs.db
